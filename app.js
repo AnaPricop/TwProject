@@ -50,10 +50,8 @@ function routing(path, res, req) {
             return NobelController.apiCreateNobelWinner(res, req);
         case '/api/update':
             return NobelController.apiUpdateNobelWinner(res, req);
-        //   case '/api/findOne':return NobelController.apiFindOneNobelWinner(res,req);
-        // case '/api/update' : return NobelController.apiUpdateNobelWinner(res,req);
-        //   case '/api/delete' : return NobelController.apiDeleteNobelWinner(res,req);
-
+        case '/api/delete' :
+            return NobelController.apiDeleteNobelWinner(res, req);
     }
     return "Invalid route!";
 }

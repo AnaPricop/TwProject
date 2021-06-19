@@ -80,4 +80,17 @@ module.exports = class NobelService {
 
         }
     }
+
+    static async deleteNobelWinner(options) {
+        // options = JSON.parse(options);
+        // console.log(typeof options);
+        try {
+            return await Nobel.destroy({
+                where: options
+            });
+        } catch (error) {
+            console.log(`Could not delete nobel winner ${error}`);
+        }
+
+    }
 }

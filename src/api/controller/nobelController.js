@@ -65,4 +65,17 @@ module.exports = class Nobel {
             res.end();
         }
     }
+
+    static async apiDeleteNobelWinner(res, req, next) {
+        const data = await req.on('data',function (data){
+            options = JSON.parse(data);
+        });
+        console.log(options);
+        try {
+            const deleteResponse = await NobelService.deleteNobelWinner(options);
+            res.write(JSON.stringify(deleteResponse));
+        } catch (error) {
+            res.statusCode = 500;
+        }
+    }
 }
