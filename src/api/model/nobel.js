@@ -3,6 +3,10 @@ const {INTEGER} = require('sequelize');
 const db = require('../config/db.config');
 
 const nobelSchema = {
+    id: {
+        type:INTEGER,
+        primaryKey: true
+    },
     firstname: {
         type: String,
     },
@@ -48,10 +52,8 @@ const nobelSchema = {
 };
 
 const nobelModel = db.define('nobel_final',nobelSchema,{
-    id: false,
     timestamps : false,
     createdAt: false,
     updatedAt: false
 });
-nobelModel.removeAttribute('id');
 module.exports = () => nobelModel;
