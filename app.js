@@ -25,6 +25,26 @@ const server = http.createServer(async (req, res) => {
     else if (path === '/api/loginAdmin' || path === '/loginAdmin.html') {
         directHtml(res, "./src/public/html/loginAdmin.html");
     }
+    else if (path === '/css/header.css') {
+        fs.readFile('./src/public/css/header.css', function (err, page) {
+            res.writeHead(200, {'Content-Type': 'text/css'});
+            res.write(page);
+            res.end();
+        });
+    }else if (path === '/css/navbar.css') {
+        fs.readFile('./src/public/css/navbar.css', function (err, page) {
+            res.writeHead(200, {'Content-Type': 'text/css'});
+            res.write(page);
+            res.end();
+        });
+    }
+    else if (path === '/css/layout.css') {
+        fs.readFile('./src/public/css/layout.css', function (err, page) {
+            res.writeHead(200, {'Content-Type': 'text/css'});
+            res.write(page);
+            res.end();
+        });
+    }
     else {
         res.setHeader('Content-Type', 'application/json');
         await routing(path, res, req);
