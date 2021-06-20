@@ -3,7 +3,7 @@
  * */
 const sqlite3 = require('sqlite3');
 const Sequelize = require('sequelize');
-const db = require('../config/database.config');
+const db = require('../config/db.config');
 const {INTEGER} = require("sequelize");
 
 const adminSchema = {

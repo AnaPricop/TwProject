@@ -3,7 +3,7 @@ const http = require('http');
 const url = require('url');
 const fs = require('fs');
 const NobelController = require("./src/api/controller/nobelController");
-const AdminController = require("./server/controllers/adminController");
+const AdminController = require("./src/api/controller/AdminController");
 const hostname = '127.0.0.1';
 const port = 3000;
 
@@ -20,8 +20,12 @@ const server = http.createServer(async (req, res) => {
     res.statusCode = 200;
 
     if (path === '/') {
-        directHtml(res, "./src/public/index.html");
-    } else {
+        directHtml(res, "./src/public/html/index.html");
+    }
+    else if (path === '/api/loginAdmin' || path === '/loginAdmin.html') {
+        directHtml(res, "./src/public/html/loginAdmin.html");
+    }
+    else {
         res.setHeader('Content-Type', 'application/json');
         await routing(path, res, req);
         res.end();
