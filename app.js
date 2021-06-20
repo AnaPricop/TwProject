@@ -2,7 +2,7 @@ const sqlite3 = require('sqlite3').verbose();
 const http = require('http');
 const url = require('url');
 const fs = require('fs');
-const NobelController = require("./src/api/controller/nobelController");
+const MoviesController = require("./src/api/controller/MoviesController");
 const AdminController = require("./src/api/controller/AdminController");
 const hostname = '127.0.0.1';
 const port = 3000;
@@ -79,15 +79,15 @@ function directHtml(res, path) {
 function routing(path, res, req) {
     switch (path) {
         case '/api/findAll':
-            return NobelController.apiGetAllNobelWinners(res, req);
+            return MoviesController.apiGetAllMovies(res, req);
         case '/api/findWhere' :
-            return NobelController.apiGetNobelWinnerWhere(res, req);
+            return MoviesController.apiGetMoviesWhere(res, req);
         case '/api/create':
-            return NobelController.apiCreateNobelWinner(res, req);
+            return MoviesController.apiCreateMovies(res, req);
         case '/api/update':
-            return NobelController.apiUpdateNobelWinner(res, req);
+            return MoviesController.apiUpdateMovies(res, req);
         case '/api/delete' :
-            return NobelController.apiDeleteNobelWinner(res, req);
+            return MoviesController.apiDeleteMovies(res, req);
         case '/api/login' :
             return AdminController.apiLoginAdmin(res, req);
     }
