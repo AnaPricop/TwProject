@@ -1,7 +1,7 @@
 /**
  * Admin Service -> interacts directly with the database via Sequelize methods
  * */
-const AdminModel = require("../dtos/admin");
+const AdminModel = require("../model/admin");
 const Sequelizer = require('sequelize');
 const db = require('../config/db.config');
 const Admin = AdminModel(db, Sequelizer);
