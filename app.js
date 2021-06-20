@@ -3,6 +3,7 @@ const http = require('http');
 const url = require('url');
 const fs = require('fs');
 const NobelController = require("./src/api/controller/nobelController");
+const AdminController = require("./server/controllers/adminController");
 const hostname = '127.0.0.1';
 const port = 3000;
 
@@ -52,6 +53,8 @@ function routing(path, res, req) {
             return NobelController.apiUpdateNobelWinner(res, req);
         case '/api/delete' :
             return NobelController.apiDeleteNobelWinner(res, req);
+        case '/api/login' :
+            return AdminController.apiLoginAdmin(res, req);
     }
     return "Invalid route!";
 }
