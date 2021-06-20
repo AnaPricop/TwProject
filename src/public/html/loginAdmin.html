@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="login-page.css">
-    <script defer src="login-page.js"></script>
+    <link rel="stylesheet" href="../css/login.css">
+    <script type="text/javascript" src="../views/loginAdminView.js"></script>
 </head>
 
 <body>
@@ -17,11 +17,10 @@
         <p id="login-error-msg">Invalid username <span id="error-msg-second-line">and/or password</span></p>
     </div>
 
-    <form id="login-form">
+    <form id="login-form" name="form">
         <input type="text" name="userid" id="username-field" class="login-form-field" placeholder="Username">
         <input type="password" name="pswrd" id="password-field" class="login-form-field" placeholder="Password">
-    <!--    <input type="submit" value="Login" id="login-form-submit"> -->
-        <input type="button" onclick="sendCredentials(this.form)" value="Login" align="center"/>
+        <input type="button" onclick="sendCredentials(this.form)" value="Login" id="login-form-submit" align="center"/>
     </form>
 
 </main>

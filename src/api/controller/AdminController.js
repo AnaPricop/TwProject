@@ -2,8 +2,7 @@
  * Admin controller -> performs API operations
  *
  * */
-const AdminService = require("../model/AdminService");
-//const utils = require("../utils");
+const AdminService = require("../services/AdminService");
 let credentials;
 module.exports = class Admin {
     /**
