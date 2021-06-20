@@ -19,11 +19,22 @@ const server = http.createServer(async (req, res) => {
 
     res.statusCode = 200;
 
-    if (path === '/') {
+    if (path === '/' || path === '/index.html') {
         directHtml(res, "./src/public/html/index.html");
     }
-    else if (path === '/api/loginAdmin' || path === '/loginAdmin.html') {
+    else if(path === '/report.html'){
+        directHtml(res,"./src/public/html/report.html");
+    }else if(path === '/contact.html') {
+        directHtml(res, "./src/public/html/contact.html");
+    }else if (path === '/api/loginAdmin' || path === '/loginAdmin.html') {
         directHtml(res, "./src/public/html/loginAdmin.html");
+    }
+    else if(path === '/css/report.css'){
+        fs.readFile('./src/public/css/report.css', function (err, page) {
+            res.writeHead(200, {'Content-Type': 'text/css'});
+            res.write(page);
+            res.end();
+        });
     }
     else if (path === '/css/header.css') {
         fs.readFile('./src/public/css/header.css', function (err, page) {
