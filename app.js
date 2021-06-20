@@ -55,6 +55,12 @@ const server = http.createServer(async (req, res) => {
             res.write(page);
             res.end();
         });
+    } else if (path === '/css/login.css') {
+        fs.readFile('./src/public/css/login.css', function (err, page) {
+            res.writeHead(200, {'Content-Type': 'text/css'});
+            res.write(page);
+            res.end();
+        });
     }
     else {
         res.setHeader('Content-Type', 'application/json');
