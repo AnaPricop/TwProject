@@ -61,9 +61,7 @@ function sendCredentials(form){
     request.onreadystatechange = function(){
         if(request.readyState === 4 && request.status ===200){
             alert(request.response);
-            if(request.response === "Logged in successfully!") {
-                //redirect
-                window.location.replace("http://127.0.0.1:3000/api/adminPanel");
+            if(request.response === "Movie created successfully!") {
             }else{
             }
         }

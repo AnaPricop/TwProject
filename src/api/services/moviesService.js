@@ -89,9 +89,9 @@ module.exports = class NobelService {
                 "reviews_from_critics": data.description
             };
             await Movie.update(Movies, {where: {"imdb_title_id": data.imdb_title_id}});
-            return "Nobel Winner updated";
+            return "Movie updated";
         } catch (error) {
-            console.log(`Error updating nobel winner ${error}`);
+            console.log(`Error updating movie ${error}`);
             return "failure";
 
         }
@@ -105,7 +105,7 @@ module.exports = class NobelService {
                 where: options
             });
         } catch (error) {
-            console.log(`Could not delete nobel winner ${error}`);
+            console.log(`Could not delete movie ${error}`);
         }
 
     }
@@ -122,7 +122,7 @@ module.exports = class NobelService {
                     return list;
                 });
         }catch (error){
-            console.log(`Could not get states ${error}`);
+            console.log(`Could not get movies ${error}`);
         }
 
     }
