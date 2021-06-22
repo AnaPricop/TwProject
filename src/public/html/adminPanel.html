@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panel</title>
+   <link rel="stylesheet" type="text/css" href="../css/adminPanel.css">
+</head>
+
+<body>
+<div class="wrapper">
+  <div class="header">
+    <h1 class="title">IMDB Movies Smart Visualizer - Admin Panel</h1>
+
+      <a href="#add"><button id="btn" class="btn" >Add Movie</button></a>
+      <a href="#delete"> <button class="btn "  >Delete Movie</button></a>
+      <a href="#update"><button class="btn" >Update Movie</button></a>
+      <button class="btn">Import Database</button>
+      <button class="btn">Export Database</button>
+  </div>
+
+    </div>
+<section id="add">
+    <main id="main-holder">
+        <h1 id="login-header">Add Movie</h1>
+<form id="add-form" name="form">
+    <div class="row">
+        <div class="column">
+
+
+    <input type="text" name="imdb_title_id"  class="add-form-field" placeholder="IMDB Title ID">
+    <input type="text" name="title"  class="add-form-field" placeholder="Title">
+    <input type="text" name="original_title"  class="add-form-field" placeholder="Original Title">
+    <input type="text" name="year"  class="add-form-field" placeholder="Year">
+        </div>  <div class="column">
+    <input type="text" name="date_published" class="add-form-field" placeholder="Date">
+    <input type="text" name="genre" class="add-form-field" placeholder="Genre">
+    <input type="text" name="duration"  class="add-form-field" placeholder="Duration">
+
+    <input type="text" name="country"  class="add-form-field" placeholder="Country">
+    </div>  <div class="column">
+    <input type="text" name="language"  class="add-form-field" placeholder="Language">
+    <input type="text" name="director" class="add-form-field" placeholder="Director">
+    <input type="text"  name="writer" class="add-form-field" placeholder="Writer">
+
+    <input type="text" name="production_company"  class="add-form-field" placeholder="Production Company">
+    </div>  <div class="column">
+    <input type="text"  name="actors" class="add-form-field" placeholder="Actors">
+    <input type="text"  name="description" class="add-form-field" placeholder="Description">
+    <input type="text" name="avg_vote"  class="add-form-field" placeholder="Average Vote">
+    <input type="text" name="votes"  class="add-form-field" placeholder="Votes">
+    </div>  <div class="column">
+    <input type="text" name="budget" class="add-form-field" placeholder="Budget">
+    <input type="text" name="usa_gross_income"  class="add-form-field" placeholder="USA Gross Income">
+    <input type="text" name="worlwide_gross_income"  class="add-form-field" placeholder="WorldWide Gross Income">
+    <input type="text" name="metascore"  class="add-form-field" placeholder="Metascore">
+    </div>  <div class="column">
+    <input type="text" name="reviews_from_users"  class="add-form-field" placeholder="Reviews from users">
+    <input type="text" name="reviews_from_critics"  class="add-form-field" placeholder="Reviews from critics">
+    <input type="button" onclick="sendCredentials(this.form)" value="Submit" id="add-form-submit" align="center"/>
+    </div>
+    </div>
+</form>
+    </main>
+</section>
+<section id="delete">
+    <main id="main-holder3">
+        <h2 id="login-header3">Delete Movie</h2>
+    <form id="delete-form" name="form">
+        <div class="row">
+            <div class="column">
+                <input type="text" name="imdb_title_id"  class="add-form-field" placeholder="IMDB Title ID">
+                <input type="text" name="title"  class="add-form-field" placeholder="Title">
+                <input type="text" name="original_title"  class="add-form-field" placeholder="Original Title">
+                <input type="text" name="year"  class="add-form-field" placeholder="Year">
+            </div>  <div class="column">
+            <input type="text" name="date_published" class="add-form-field" placeholder="Date">
+            <input type="text" name="genre" class="add-form-field" placeholder="Genre">
+            <input type="text" name="duration"  class="add-form-field" placeholder="Duration">
+            <input type="text" name="country"  class="add-form-field" placeholder="Country">
+        </div>  <div class="column">
+            <input type="text" name="language"  class="add-form-field" placeholder="Language">
+            <input type="text" name="director" class="add-form-field" placeholder="Director">
+            <input type="text"  name="writer" class="add-form-field" placeholder="Writer">
+            <input type="text" name="production_company"  class="add-form-field" placeholder="Production Company">
+        </div>  <div class="column">
+            <input type="text"  name="actors" class="add-form-field" placeholder="Actors">
+            <input type="text"  name="description" class="add-form-field" placeholder="Description">
+            <input type="text" name="avg_vote"  class="add-form-field" placeholder="Average Vote">
+            <input type="text" name="votes"  class="add-form-field" placeholder="Votes">
+        </div>  <div class="column">
+            <input type="text" name="budget" class="add-form-field" placeholder="Budget">
+            <input type="text" name="usa_gross_income"  class="add-form-field" placeholder="USA Gross Income">
+            <input type="text" name="worlwide_gross_income"  class="add-form-field" placeholder="WorldWide Gross Income">
+            <input type="text" name="metascore"  class="add-form-field" placeholder="Metascore">
+        </div>  <div class="column">
+            <input type="text" name="reviews_from_users"  class="add-form-field" placeholder="Reviews from users">
+            <input type="text" name="reviews_from_critics"  class="add-form-field" placeholder="Reviews from critics">
+            <input type="button" onclick="sendCredentials2(this.form)" value="Submit" id="delete-form-submit" align="center"/>
+        </div>
+        </div>
+    </form>
+    </main>
+</section>
+<section id="update">
+    <main id="main-holder2">
+        <h2 id="login-header2">Update Movie</h2>
+<form id="update-form" name="form">
+    <div class="row">
+        <div class="column">
+    <input type="text" name="imdb_title_id"  class="add-form-field" placeholder="IMDB Title ID">
+    <input type="text" name="title"  class="add-form-field" placeholder="Title">
+    <input type="text" name="original_title"  class="add-form-field" placeholder="Original Title">
+    <input type="text" name="year"  class="add-form-field" placeholder="Year">
+        </div>  <div class="column">
+    <input type="text" name="date_published" class="add-form-field" placeholder="Date">
+    <input type="text" name="genre" class="add-form-field" placeholder="Genre">
+    <input type="text" name="duration"  class="add-form-field" placeholder="Duration">
+    <input type="text" name="country"  class="add-form-field" placeholder="Country">
+    </div>  <div class="column">
+    <input type="text" name="language"  class="add-form-field" placeholder="Language">
+    <input type="text" name="director" class="add-form-field" placeholder="Director">
+    <input type="text"  name="writer" class="add-form-field" placeholder="Writer">
+    <input type="text" name="production_company"  class="add-form-field" placeholder="Production Company">
+    </div>  <div class="column">
+    <input type="text"  name="actors" class="add-form-field" placeholder="Actors">
+    <input type="text"  name="description" class="add-form-field" placeholder="Description">
+    <input type="text" name="avg_vote"  class="add-form-field" placeholder="Average Vote">
+    <input type="text" name="votes"  class="add-form-field" placeholder="Votes">
+    </div>  <div class="column">
+    <input type="text" name="budget" class="add-form-field" placeholder="Budget">
+    <input type="text" name="usa_gross_income"  class="add-form-field" placeholder="USA Gross Income">
+    <input type="text" name="worlwide_gross_income"  class="add-form-field" placeholder="WorldWide Gross Income">
+    <input type="text" name="metascore"  class="add-form-field" placeholder="Metascore">
+    </div>  <div class="column">
+    <input type="text" name="reviews_from_users"  class="add-form-field" placeholder="Reviews from users">
+    <input type="text" name="reviews_from_critics"  class="add-form-field" placeholder="Reviews from critics">
+    <input type="button" onclick="sendCredentials3(this.form)" value="Submit" id="update-form-submit" align="center"/>
+        </div>
+    </div>
+</form>
+    </main>
+</section>
+<script type="text/javascript" src="../views/adminPanelView.js"></script>
+<script type="text/javascript" src="../views/deleteView.js"></script>
+<script type="text/javascript" src="../views/updateView.js"></script>
+</body>
+</html>

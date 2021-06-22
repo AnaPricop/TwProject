@@ -25,19 +25,41 @@ const server = http.createServer(async (req, res) => {
         directHtml(res, "./src/public/html/report.html");
     } else if (path === '/contact.html') {
         directHtml(res, "./src/public/html/contact.html");
+    }  else if (path === '/api/adminPanel' || path === '/adminPanel.html' || path === '/api/loginAdmin') {
+        directHtml(res, "./src/public/html/adminPanel.html");
     } else if (path === '/api/loginAdmin' || path === '/loginAdmin.html' || path === '/api/loginAdmin') {
-        directHtml(res, "./src/public/html/loginAdmin.html");
-    } else if (path === '/views/loginAdminView.js') {
-    }
-    else if(path === '/report.html'){
-        directHtml(res,"./src/public/html/report.html");
-    }else if(path === '/contact.html') {
-        directHtml(res, "./src/public/html/contact.html");
-    }else if (path === '/api/loginAdmin' || path === '/loginAdmin.html' || path === '/api/loginAdmin') {
         directHtml(res, "./src/public/html/loginAdmin.html");
     }else if (path === '/views/loginAdminView.js') {
         fs.readFile('./src/public/views/loginAdminView.js', function (err, page) {
             res.writeHead(200, {'Content-Type': 'application/javascript'});
+            res.write(page);
+            res.end();
+        });
+    }
+    else if (path === '/views/adminPanelView.js') {
+        fs.readFile('./src/public/views/adminPanelView.js', function (err, page) {
+            res.writeHead(200, {'Content-Type': 'application/javascript'});
+            res.write(page);
+            res.end();
+        });
+    }
+    else if (path === '/views/deleteView.js') {
+        fs.readFile('./src/public/views/deleteView.js', function (err, page) {
+            res.writeHead(200, {'Content-Type': 'application/javascript'});
+            res.write(page);
+            res.end();
+        });
+    }
+    else if (path === '/views/updateView.js') {
+        fs.readFile('./src/public/views/updateView.js', function (err, page) {
+            res.writeHead(200, {'Content-Type': 'application/javascript'});
+            res.write(page);
+            res.end();
+        });
+    }
+    else if(path === '/css/adminPanel.css'){
+        fs.readFile('./src/public/css/adminPanel.css', function (err, page) {
+            res.writeHead(200, {'Content-Type': 'text/css'});
             res.write(page);
             res.end();
         });
