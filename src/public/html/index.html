@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nobel prize winners Smart Visualizer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/layout.css">
+    <link rel="stylesheet" type="text/css" href="../css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="../css/header.css">
+    <link rel="stylesheet" type="text/css" href="../css/tags.css">
+    <link rel="stylesheet" type="text/css" href="../css/table.css">
+    <script src="../../api/controller/AdminController.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi">
+    </script>
+    <script type="text/javascript">
+        google.load('visualization', '1.0', {'packages': ['corechart']});
+    </script>
+</head>
+<body>
+<div class="wrapper">
+    <div class="header">
+        <h1 class="title">Nobel prize winners between 1901-2020</h1>
+
+        <nav>
+            <ul>
+                <li class="active"><a class="line" href="./index.html">Home</a></li>
+
+                <li><a class="line" href="report.html">Report</a></li>
+
+                <li><a class="line" href="contact.html">Contact</a></li>
+
+                <li><a class="line" href="loginAdmin.html">Admin Panel</a></li>
+            </ul>
+        </nav>
+    </div>
+
+</div>
+
+
+<div style="display: flex;
+  justify-content: center;">
+    <button type="button" id="button1" style="float:left;">
+        Search by name
+    </button>
+</div>
+
+<div class="container">
+    <div id="form1">
+
+    </div>
+</div>
+<div class="container1">
+    <div class="dropdown">
+        <button class="dropbtn">Criteria</button>
+        <div class="dropdown-content">
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <a href="#" onclick="addFilter('year');">Year</a>
+                </button>
+<!--                <div class="dropdown-content">-->
+
+<!--                    <a href="#" onclick="addFilter('Severity');">Severity</a>-->
+<!--                    <a href="#" onclick="addFilter('Distance(mi)');">Distance</a>-->
+<!--                    <a href="#" onclick="addFilter('Description');">Description</a>-->
+<!--                    <a href="#" onclick="addFilter('Number');">Number</a>-->
+<!--                </div>-->
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn" onclick="addFilter('genre');">Genre</button>
+<!--                <div class="dropdown-content">-->
+
+<!--                    <a href="#" onclick="addFilter('Start_Time');">Start_Time</a>-->
+<!--                    <a href="#" onclick="addFilter('End_Time');">End_Time</a>-->
+<!--                    <a href="#" onclick="addFilter('Timezone');">Timezone</a>-->
+<!--                    <a href="#" onclick="addFilter('Sunrise_Sunset');">Sunrise_Sunset</a>-->
+<!--                    <a href="#" onclick="addFilter('Civil_Twilight');">Civil_Twilight</a>-->
+<!--                    <a href="#" onclick="addFilter('Nautical_Twilight');">Nautical_Twilight</a>-->
+<!--                    <a href="#" onclick="addFilter('Astronomical_Twilight');">Astronomical_Twilight</a>-->
+<!--                </div>-->
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="adv-filters">
+
+</div>
+<button   type="button" onclick="run();">View Table
+</button>
+<!--<section id="table-charts">-->
+<!--    <table id="table-div" style="width : 2000px; height: 500px;"></table>-->
+<!--</section>-->
+<section id="table-charts">
+    <table id="table-div" style="width : 2000px; height: 500px;"></table>
+</section>
+<script type='text/javascript'>
+    let objects = [];
+    let tags = [];
+    let movies = [];
+    let filters1 = ['imdb_title_id', 'title', 'original_title', 'year', 'date_published', 'genre', 'duration', 'country',
+        'language', 'director','writer', 'production_company', 'actors', 'description', 'avg_vote', 'votes', 'budget'
+        , 'usa_gross_income', 'worlwide_gross_income', 'metascore', 'reviews_from_users', 'reviews_from_critics'];
+    let filters = {};
+</script>
+<script type="text/javascript" src="src/public/views/movieView.js"></script>
+<script type="text/javascript" src="src/public/scripts/inputScript.js"></script>
+<script type="text/javascript" src="src/public/entities/table.js"></script>
+<!--<script type="text/javascript" src="src/public/entities/table1.js"></script>-->
+</body>
+</html>

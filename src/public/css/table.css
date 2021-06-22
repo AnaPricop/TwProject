@@ -1,0 +1,45 @@
+.cssHeaderRow {
+    background-color: #BF5D0D;
+}
+.cssTableRow {
+    background-color: #43474C;
+}
+.cssOddTableRow {
+    background-color: #26292B;
+
+}
+.cssSelectedTableRow {
+    font-size: 20px;
+    font-weight:bold;
+}
+.cssHoverTableRow {
+    background: #303336;
+}
+.cssHeaderCell {
+    color: #FFFFFF;
+    font-size: 16px;
+    padding: 10px !important;
+    border: solid 1px #464749;
+}
+.cssTableCell {
+    color: #C9CCCF;
+    font-size: 16px;
+    padding: 10px !important;
+    border: solid 1px #464749;
+}
+#table-charts {
+    width: 97%;
+    /*display: flex;*/
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#table1-charts {
+    width: 97%;
+    /*display: flex;*/
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
