@@ -14,8 +14,8 @@
       <a href="#add"><button id="btn" class="btn" >Add Movie</button></a>
       <a href="#delete"> <button class="btn "  >Delete Movie</button></a>
       <a href="#update"><button class="btn" >Update Movie</button></a>
-      <button class="btn">Import Database</button>
-      <button class="btn">Export Database</button>
+      <a href="#import"><button class="btn">Import Database</button></a>
+      <a href="#export"><button class="btn">Export Database</button></a>
   </div>
 
     </div>
@@ -138,6 +138,31 @@
         </div>
     </div>
 </form>
+    </main>
+</section>
+<section id="import">
+<!--        IMPORT-->
+    <main id="main-holder4">
+    <h2 id="import-header">Import Database</h2>
+<form id = "import-database" method = "post">
+    <input id = "fileupload" type = "file" />
+    <input type = "submit" value = "submit" id = "submit" />
+</form>
+    </main>
+</section>
+<section id="export">
+<!--        EXPORT-->
+    <main id="main-holder5">
+    <h2 id="export-header">Export Database</h2>
+        <div class="row">
+            <div class="column">
+<button class="button" type="submit" id="export-db"><a href="../../../../data/movies.db" download="movies.db">SQLITE
+    DB</a></button>
+            </div>  <div class="column">
+<button class="button" type="submit" id="export-csv"><a href="data/IMDb_movies.csv"
+                                                        download="IMDb_movies.csv">CSV</a></button>
+        </div>
+        </div>
     </main>
 </section>
 <script type="text/javascript" src="../views/adminPanelView.js"></script>
