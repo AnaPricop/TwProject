@@ -139,6 +139,14 @@ function addFilter(filter) {
         input.style.cssText = ' padding: 5px; border: 0; outline: none; color: #333;flex: 1; width: 20%;margin: 30px auto; text-align:center; display: flex;align-items: center;';
         // input.className = "input";
         input.type = "text";
+        if (filter === "date_published")
+        input.placeholder = "YYYY-MM-DD";
+        else if (filter === "avg_vote")
+            input.placeholder = "real number";
+        else if (filter === "reviews_from_users")
+            input.placeholder = "real number";
+        else if (filter === "reviews_from_critics")
+            input.placeholder = "real number";
         input.name = filter + count;
         label1.innerText = filter + " : ";
         form.append(label1);
@@ -162,39 +170,4 @@ function generateStatistics() {
     }
 }
 
-// /**
-//  * Table construction and drawing
-//  */
-// google.charts.load('current', {'packages':['table']});
-// //google.charts.setOnLoadCallback(runTable);
-// async function runTable(){
-//
-//     await fetch_and_draw_table(movies,filters);
-//     console.log(filters);
-//
-// }
-// function getRows(accidents){
-//     let rows = new Array(100);
-//     let count = 0;
-//     for(let accident of accidents){
-//         let keys = Object.keys(accident);
-//         rows[count] = new Array(keys.length);
-//         for(let key of keys){
-//             rows[count].push(accident[key]);
-//         }
-//         count++;
-//     }
-//     return rows;
-//
-// }
-// function parseResponse(accidents){
-//     if(accidents === undefined || accidents === null){
-//         alert("0 accidents with these criteria found!");
-//     }
-//     let columns = Object.keys(accidents[0]); //any instance will do
-//     let rows = getRows(accidents);
-//     // console.log(rows);
-//     return [columns,rows];
-// }
-//
 
