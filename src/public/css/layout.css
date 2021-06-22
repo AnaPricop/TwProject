@@ -9,6 +9,17 @@
     display: flex;
     align-items: center;
 }
+.container2{
+    /*text-align: center;*/
+    /*position: relative;*/
+    width: 20%;
+    margin: 50px auto;
+    /*display: block;*/
+    /*height: 60px;*/
+    font-size: calc(4px + 26 * ((100vw - 150px) / (1600 - 150)));
+    display: flex;
+    align-items: center;
+}
 .dropbtn {
     background-color: #FF7A00;
     color: white;

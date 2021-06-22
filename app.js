@@ -131,14 +131,7 @@ const server = http.createServer(async (req, res) => {
             res.end();
         });
     }
-    else if (path === '/src/public/entities/table1.js') {
-        console.log('05')
-        fs.readFile('./src/public/entities/table1.js', function (err, page) {
-            res.writeHead(200, {'Content-Type': 'application/javascript'});
-            res.write(page);
-            res.end();
-        });
-    }else {
+    else {
         res.setHeader('Content-Type', 'application/json');
         await routing(path, res, req);
         res.end();
