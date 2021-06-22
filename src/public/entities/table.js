@@ -60,7 +60,7 @@ async function fetch_and_draw_table(movies, filters){
         request.open("POST", _url, false);
         request.send(JSON.stringify(filters));
     }
-    else
+    if (movies!== "")
     {
         console.log(movies);
         for (let movie of movies) {

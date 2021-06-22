@@ -162,42 +162,39 @@ function generateStatistics() {
     }
 }
 
-
-
-
-
-/**
- * Table construction and drawing
- */
-google.charts.load('current', {'packages':['table']});
-//google.charts.setOnLoadCallback(runTable);
-async function runTable(){
-    await fetch_and_draw_table(movies,filters);
-    console.log(filters);
-
-}
-function getRows(accidents){
-    let rows = new Array(100);
-    let count = 0;
-    for(let accident of accidents){
-        let keys = Object.keys(accident);
-        rows[count] = new Array(keys.length);
-        for(let key of keys){
-            rows[count].push(accident[key]);
-        }
-        count++;
-    }
-    return rows;
-
-}
-function parseResponse(accidents){
-    if(accidents === undefined || accidents === null){
-        alert("0 accidents with these criteria found!");
-    }
-    let columns = Object.keys(accidents[0]); //any instance will do
-    let rows = getRows(accidents);
-    // console.log(rows);
-    return [columns,rows];
-}
-
+// /**
+//  * Table construction and drawing
+//  */
+// google.charts.load('current', {'packages':['table']});
+// //google.charts.setOnLoadCallback(runTable);
+// async function runTable(){
+//
+//     await fetch_and_draw_table(movies,filters);
+//     console.log(filters);
+//
+// }
+// function getRows(accidents){
+//     let rows = new Array(100);
+//     let count = 0;
+//     for(let accident of accidents){
+//         let keys = Object.keys(accident);
+//         rows[count] = new Array(keys.length);
+//         for(let key of keys){
+//             rows[count].push(accident[key]);
+//         }
+//         count++;
+//     }
+//     return rows;
+//
+// }
+// function parseResponse(accidents){
+//     if(accidents === undefined || accidents === null){
+//         alert("0 accidents with these criteria found!");
+//     }
+//     let columns = Object.keys(accidents[0]); //any instance will do
+//     let rows = getRows(accidents);
+//     // console.log(rows);
+//     return [columns,rows];
+// }
+//
 
