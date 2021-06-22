@@ -14,7 +14,7 @@ const movieSchema = {
         type: String,
     },
     year: {
-        type: String,
+        type: String
     },
     date_published: {
         type: String,
@@ -23,7 +23,9 @@ const movieSchema = {
         type: String,
     },
     duration: {
+
         type: String,
+
     },
     country: {
         type: String,
@@ -72,10 +74,12 @@ const movieSchema = {
     }
 };
 
-const movieModel = db.define('imdb_movies',movieSchema,{
-    timestamps : false,
+const movieModel = db.define('imdb_movies', movieSchema, {
+    timestamps: false,
     createdAt: false,
     updatedAt: false
 });
+
 movieModel.removeAttribute('id');
+
 module.exports = () => movieModel;

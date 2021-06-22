@@ -28,18 +28,28 @@ const server = http.createServer(async (req, res) => {
     } else if (path === '/api/loginAdmin' || path === '/loginAdmin.html' || path === '/api/loginAdmin') {
         directHtml(res, "./src/public/html/loginAdmin.html");
     } else if (path === '/views/loginAdminView.js') {
+    }
+    else if(path === '/report.html'){
+        directHtml(res,"./src/public/html/report.html");
+    }else if(path === '/contact.html') {
+        directHtml(res, "./src/public/html/contact.html");
+    }else if (path === '/api/loginAdmin' || path === '/loginAdmin.html' || path === '/api/loginAdmin') {
+        directHtml(res, "./src/public/html/loginAdmin.html");
+    }else if (path === '/views/loginAdminView.js') {
         fs.readFile('./src/public/views/loginAdminView.js', function (err, page) {
             res.writeHead(200, {'Content-Type': 'application/javascript'});
             res.write(page);
             res.end();
         });
-    } else if (path === '/css/report.css') {
+    }
+    else if(path === '/css/report.css'){
         fs.readFile('./src/public/css/report.css', function (err, page) {
             res.writeHead(200, {'Content-Type': 'text/css'});
             res.write(page);
             res.end();
         });
-    } else if (path === '/css/header.css') {
+    }
+    else if (path === '/css/header.css') {
         fs.readFile('./src/public/css/header.css', function (err, page) {
             res.writeHead(200, {'Content-Type': 'text/css'});
             res.write(page);
@@ -51,7 +61,8 @@ const server = http.createServer(async (req, res) => {
             res.write(page);
             res.end();
         });
-    } else if (path === '/css/layout.css') {
+    }
+    else if (path === '/css/layout.css') {
         fs.readFile('./src/public/css/layout.css', function (err, page) {
             res.writeHead(200, {'Content-Type': 'text/css'});
             res.write(page);
@@ -77,13 +88,6 @@ const server = http.createServer(async (req, res) => {
         });
     }else if (path === '/css/tags.css') {
         fs.readFile('./src/public/css/tags.css', function (err, page) {
-            res.writeHead(200, {'Content-Type': 'text/css'});
-            res.write(page);
-            res.end();
-        });
-    }
-    else if (path === '/css/tags.css') {
-        fs.readFile('./src/public/css/table.css', function (err, page) {
             res.writeHead(200, {'Content-Type': 'text/css'});
             res.write(page);
             res.end();

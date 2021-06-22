@@ -4,7 +4,11 @@ html {
     padding: 0;
     background: #222629;
     font-family: "Oxygen", "sans-serif";
+<<<<<<< HEAD
     /*overflow-x: hidden;*/
+=======
+    overflow-x: hidden;
+>>>>>>> 9304b6c4b8127980d84027aa42c65e10b84da461
 }
 
 body {
