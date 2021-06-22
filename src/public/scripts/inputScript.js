@@ -91,12 +91,24 @@ function displayHideButtons(div_name, action) {
     let style;
     if (action === "hide") style = "none";
     if (action === "display") style = "block";
-    /* make appear/hide export buttons*/
-    // if (div_name === "table-div") {
-    //     document.getElementById("csv-table-button").style.display = style;
-    // }
+    if (div_name === "table-div") {
+        document.getElementById("csv-table-button").style.display = style;
+    } else {
+        let export_types = ["webp", "png", "svg"];
+        for (let x of export_types) {
+            let button_name = x + "-" + getDivName(div_name) + "-button";
+            console.log(button_name);
+            document.getElementById(button_name).style.display = style;
+        }
+    }
 }
-
+function getDivName(div_name) {
+    console.log(div_name);
+    switch (div_name) {
+        case  "table-div":
+            return "table";
+    }
+}
 async function loadVisualisation(div_name, script_src, fct) {
 
     let div = document.getElementById(div_name);

@@ -130,6 +130,13 @@ const server = http.createServer(async (req, res) => {
             res.write(page);
             res.end();
         });
+    }else if (path === '/src/public/exportService/exportCSV.js') {
+        console.log('05')
+        fs.readFile('./src/public/exportService/exportCSV.js', function (err, page) {
+            res.writeHead(200, {'Content-Type': 'application/javascript'});
+            res.write(page);
+            res.end();
+        });
     }
     else {
         res.setHeader('Content-Type', 'application/json');

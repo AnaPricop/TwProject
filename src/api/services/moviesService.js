@@ -8,7 +8,7 @@ module.exports = class NobelService {
         try {
             return await Movie.findAll({
                 where: options,
-                limit: 100
+                // limit: 100
             })
                 .then(function (count) {
                     console.log(count);
