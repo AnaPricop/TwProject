@@ -37,15 +37,8 @@ form1.addEventListener('keyup', (e) => {
         });
         addTags();
         span.value = '';
-        // selectedVisualisation = "Table";
-        // visualisation = selectedVisualisation;
-        //
-        // loadVisualisation("table-div", "../../entities/table.js", runTable);
-
     }
-    // run();
-})
-;
+});
 
 
 function createTag(label) {
@@ -91,7 +84,7 @@ async function showResult() {
     //     document.getElementById(div).style.display = "none";
     //     displayHideButtons(div, "hide");
     // }
-            await loadVisualisation("table-div", "../../entities/table.js", runTable);
+    await loadVisualisation("table-div", "../../entities/table.js", runTable);
 }
 
 function displayHideButtons(div_name, action) {
@@ -140,7 +133,7 @@ function addFilter(filter) {
         // input.className = "input";
         input.type = "text";
         if (filter === "date_published")
-        input.placeholder = "YYYY-MM-DD";
+            input.placeholder = "YYYY-MM-DD";
         else if (filter === "avg_vote")
             input.placeholder = "real number";
         else if (filter === "reviews_from_users")
@@ -162,10 +155,10 @@ function addFilter(filter) {
 function generateStatistics() {
     // console.log(input_fields);
 
-        for (let input of input_fields) {
-            let criteria = input.slice(0, -1);
-            let value = document.getElementsByName(input)[0].value;
-            filters[criteria] = value;
+    for (let input of input_fields) {
+        let criteria = input.slice(0, -1);
+        let value = document.getElementsByName(input)[0].value;
+        filters[criteria] = value;
 
     }
 }
